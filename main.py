@@ -12,3 +12,20 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+from animal import Mammal, Bird, Reptile
+from enclosure import Enclosure
+
+def main():
+    print("=== Zoo Setup ===")
+    max = Mammal("Max", "Koala", 2, ["eucalyptus"], "temperate")
+    oscar = Bird("Oscar", "Emu", 4, ["pellets"], "grassland")
+    lewis = Reptile("Lewis", "Blue-tongued Lizard", 3, ["insects"], "terrarium")
+
+    grove = Enclosure("Koala Grove", 800, "temperate")
+    field = Enclosure("Emu Field", 1200, "grassland")
+    den = Enclosure("Lizard Den", 200, "terrarium")
+
+    grove.add_animal(max)
+    field.add_animal(oscar)
+    den.add_animal(lewis)
