@@ -22,8 +22,21 @@ class Zookeeper(Staff):
     def __init__(self, name):
         Staff.__init__(self, name, "Zookeeper")
 
-def feed_animal(self, animal, food):
-    return "[" + self.name + "] " + animal.eat(food)
+    def feed_animal(self, animal, food):
+        return "[" + self.name + "] " + animal.eat(food)
 
-def clean_enclosure(self, enclosure):
-    return "[" + self.name + "] " + enclosure.clean()
+    def clean_enclosure(self, enclosure):
+        return "[" + self.name + "] " + enclosure.clean()
+
+
+class Veterinarian(Staff):
+    def __init__(self, name):
+        Staff.__init__(self, name, "Veterinarian")
+
+        def check_health(self, animal, description, severity):
+            animal.report_health_issue(description)
+            return "[" + self.name + "] recorded issue for " + animal.name + " (" + severity + ")"
+
+        def resolve_issue(self, animal):
+            animal.resolve_health_issue()
+            return "[" + self.name + "] resolved issue for " + animal.name
