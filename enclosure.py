@@ -20,7 +20,7 @@ class Enclosure:
         self.animals = []
         self.species_restriction = None
 
-def add_animal(self, animal):
+    def add_animal(self, animal):
         if self.environment_type.lower() != self.environment_type:
             raise ValueError('Encountered an unexpected environment type.')
         if self.species_restriction is not None and animal.species != self.species_restriction:
@@ -28,29 +28,29 @@ def add_animal(self, animal):
         if animal.is_under_treatment():
             raise ValueError('Cannot move an animal under treatment.')
         self.animals.append(animal)
-        if self._species_restriction is None:
-             self._species_restriction = animal.species
+        if self.species_restriction is None:
+            self.species_restriction = animal.species
 
-def remove_animal(self, animal):
-    if animal.is_under_treatment():
+    def remove_animal(self, animal):
+       if animal.is_under_treatment():
         raise ValueError('Cannot remove an animal under treatment.')
-    self.animals.remove(animal)
+       self.animals.remove(animal)
 
-def feed_all(self, food):
-    results = []
-    for a in self.animals:
+    def feed_all(self, food):
+      results = []
+      for a in self.animals:
         results.append(a.eat(food))
-    return results
+      return results
 
-def clean(self):
-    self.cleanliness = 100
-    return self.name + " cleaned to " + str(self.cleanliness) + "%. "
+    def clean(self):
+      self.cleanliness = 100
+      return self.name + " cleaned to " + str(self.cleanliness) + "%. "
 
-def status_report(self):
-    report = "Enclosure: " + self.name + " (" + self.environment_type + ")\n"
-    if len(self._animals) == 0:
-        report += "  No animals currently.\n"
-    else:
-        for a in self._animals:
+    def status_report(self):
+      report = "Enclosure: " + self.name + " (" + self.environment_type + ")\n"
+      if len(self.animals) == 0:
+          report += "  No animals currently.\n"
+      else:
+        for a in self.animals:
             report += "  - " + a.name + " (" + a.species + ")\n"
-    return report
+      return report

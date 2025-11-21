@@ -8,6 +8,8 @@ This is my own work as defined by the University's Academic Integrity Policy.
 '''
 
 from abc import ABC, abstractmethod
+from datetime import date
+
 
 class Animal(ABC):
     """Base class for all animals in the zoo."""
@@ -32,34 +34,34 @@ class Animal(ABC):
     def make_sound(self):
         pass
 
-def eat(self, food):
-    if food.lower() in self.dietary_needs:
+    def eat(self, food):
+      if food.lower() in self.dietary_needs:
         return self.name + " the " + self.species + " eats " + food + " happily "
-    else:
+      else:
         return self.name + " refuses to eat " + food + " . "
 
-def sleep(self, hours=8):
-    return self.name + " sleeps for " + str(hours) + " hours."
+    def sleep(self, hours=8):
+      return self.name + " sleeps for " + str(hours) + " hours."
 
-def report_health_issues(self, description):
-    self.health_issues.append({
+    def report_health_issues(self, description):
+      self.health_issues.append({
         "description": description,
         "date": date.today(),
         "status": "open"
         })
 
-def resolve_health_issues(self):
-    for issue in self.health_issues:
+    def resolve_health_issues(self):
+      for issue in self.health_issues:
          issue["status"] = "resolved"
 
-def is_under_treatment(self):
-    for issue in self.health_issues:
-        if issue["status"] == "open":
-            return True
+    def is_under_treatment(self):
+        for issue in self.health_issues:
+            if issue["status"] == "open":
+                return True
         return False
 
-def __str__(self):
-    return self.name + " (" + self.species + ", " + self.category + ") - Age: " + str(self.age)
+    def __str__(self):
+     return self.name + " (" + self.species + ", " + self.category + ") - Age: " + str(self.age)
 
 
 class Mammal(Animal):
