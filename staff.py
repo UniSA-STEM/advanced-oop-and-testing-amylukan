@@ -13,5 +13,17 @@ class Staff:
         self.role = role
 
     def __str__(self):
-        return f"{self.name} ({self.role})"
+        return self.name + " (" + self.role + ")"
 
+from animal import Animal
+from enclosure import Enclosure
+
+class Zookeeper(Staff):
+    def __init__(self, name):
+        Staff.__init__(self, name, "Zookeeper")
+
+def feed_animal(self, animal, food):
+    return "[" + self.name + "] " + animal.eat(food)
+
+def clean_enclosure(self, enclosure):
+    return "[" + self.name + "] " + enclosure.clean()
