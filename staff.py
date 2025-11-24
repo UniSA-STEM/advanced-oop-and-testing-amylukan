@@ -1,8 +1,8 @@
 '''
 File: staff.py
-Description: A brief description of this Python module.
+Description: The staff classes for the zoo operations.
 Author: Amy Lukan
-ID:
+ID: 110458803
 Username: LUKAY008
 This is my own work as defined by the University's Academic Integrity Policy.
 '''
@@ -11,7 +11,7 @@ from enclosure import Enclosure
 
 
 class Staff:
-    #Base class for all staff.
+    # Base class for all staff.
 
     def __init__(self, name, role):
         self.name = name
@@ -20,7 +20,7 @@ class Staff:
     def __str__(self):
         return self.name + " (" + self.role + ")"
 
-
+# feeds animals and cleans their enclosures
 class Zookeeper(Staff):
     #Zookeeper responsible for feeding and cleaning.
 
@@ -33,7 +33,7 @@ class Zookeeper(Staff):
     def clean_enclosure(self, enclosure):
         return "[" + self.name + "] " + enclosure.clean()
 
-
+# deals with the animal health checks and treatments
 class Veterinarian(Staff):
     #Veterinarian responsible for health checks.
 

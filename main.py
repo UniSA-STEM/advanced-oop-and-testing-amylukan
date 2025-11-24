@@ -1,8 +1,8 @@
 '''
 File: main.py
-Description: A brief description of this Python module.
+Description: Script showing how the zoo systems works.
 Author: Amy Lukan
-ID:
+ID: 110458803
 Username: LUKAY008
 This is my own work as defined by the University's Academic Integrity Policy.
 '''
@@ -30,6 +30,7 @@ def main():
     print("Animals and Enclosures created.")
 
     print("=== Zoo Operations ===")
+# Staff actions: feeding, cleaning, health checks & movement rules
 
     ana = Zookeeper("Ana")
     lola = Veterinarian("Lola")
